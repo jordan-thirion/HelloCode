@@ -1,0 +1,17 @@
+<app-navbar [clickable]="false"></app-navbar>
+<div class="fond">
+  <div class="login">
+    <h2 class="login-header">Veuillez vous connecter</h2>
+    <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.pseudo.errors }">
+        <input type="pseudo" placeholder="Pseudo" formControlName="pseudo">
+      </p>
+      <div *ngIf="isSubmitted && formControls.pseudo.errors" class="help-block">
+        <div *ngIf="formControls.pseudo.errors.required">Pseudo is required</div>
+      </div>
+      <p>
+        <input type="submit" value="Connexion">
+      </p>
+    </form>
+  </div>
+</div>

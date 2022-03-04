@@ -1,0 +1,14 @@
+<app-navbar [clickable]="true"></app-navbar>
+<div class="fond">
+    <div class="texte">
+    <h1>Ce site répertorie des articles divisés en {{number}} catégories: </h1>
+    <ul>
+        <li style="font-size: 30px" *ngFor="let category of categories">
+            {{category.name}}
+            <ol *ngIf="category.articles.length != 0">
+                <li style="font-size: 15px" *ngFor="let article of category.articles">{{article.title}}</li>
+            </ol>
+        </li>    
+    </ul>
+    </div>  
+</div>

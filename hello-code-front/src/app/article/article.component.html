@@ -1,0 +1,12 @@
+<app-navbar [clickable]="true"></app-navbar>
+<div class="fond">
+    <div class="texte">
+        <h1>{{article.title}}</h1>
+        <hr>
+        <h3>{{article.text}}</h3>
+        <p>écrit le {{article.dateCreated}}</p>
+    </div>
+    <a *ngIf="article.id != 1" class="left btn" [routerLink]="['/article', article.id - 1]" (click)="reload()">Last article</a>
+    <a *ngIf="article.id != listArticle.length" class="right btn" [routerLink]="['/article', article.id + 1]" (click)="reload()">Next article</a>
+</div>
+

@@ -1,0 +1,10 @@
+.formInline{
+    display: flex;
+    align-items: right;
+    justify-content: center;
+}
+
+.disabled{
+    pointer-events: none;
+    cursor: default;
+}

@@ -1,0 +1,18 @@
+<app-navbar [clickable]="true"></app-navbar>
+<div class="fond">
+    <div class="texte">
+    <h2>Veuillez saisir les informations de l'Article</h2>
+    <form [formGroup]="newArticleForm" (ngSubmit)="createArticle()">
+        <input class="mt-2" type="text" placeholder="Titre de l'article" formControlName="title" > <br>
+        <input class="mt-2" type="text" placeholder="Texte de l'article" formControlName="text" > <br>
+        <label class="mt-2" for="category">Choisissez une catégorie</label> <br>
+        <select class="mt-2" name="category" formControlName="categoryId">
+            <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+        </select>
+      <p>
+        <input class="mt-2" type="submit" value="Ajouter Article">
+      </p>
+    </form>
+    </div>
+</div>
+

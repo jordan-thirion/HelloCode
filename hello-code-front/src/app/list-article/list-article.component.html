@@ -1,0 +1,17 @@
+<app-navbar [clickable]="true"></app-navbar>
+<div class="centered">
+  <div  cdkDropList  (cdkDropListDropped)="drop($event)">
+    <div class="inline mt-5" *ngFor="let article of listArticle" >   
+      <div class="card ms-2" style="width: 18rem; height: 12rem" cdkDragLockAxis="x" cdkDrag>
+        <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+        <div class="card-body" >
+         <h5 class="card-title">{{article.title}}</h5>
+         <p class="card-text">{{article.text}}</p>
+         <a [routerLink]="['/article', article.id]" class="btn">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="bottomCentered btn" href="/formArticle"> Ajouter un article </a>
+</div>
+
