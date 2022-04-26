@@ -22,4 +22,9 @@ export class AppController {
     return this.appService.getArticleById(params.id);
   }
 
+  @Get()
+  getHello(): string {
+    return this.appService.getHello();
+  }
+
 }

@@ -17,4 +17,8 @@ export class CategoryService {
         const newCategory = this.categoryRepository.create({name})
         return this.categoryRepository.save(newCategory);
     }
+
+    getCategoryById(id){
+        return this.categoryRepository.findOne(id);
+    }
 }
